@@ -26,11 +26,17 @@ export const updateUserRecord = async (
   record: Map<TYPE, number>,
   id: string,
 ) => {
-  return User.findById(id, {
-    $set: {
-      record,
+  return User.findByIdAndUpdate(
+    id,
+    {
+      $set: {
+        record,
+      },
     },
-  });
+    { new: true },
+  )
+    .select("_id name")
+    .lean();
 };
 
 export const createAnonymousRecord = async (record: Map<TYPE, number>) => {
