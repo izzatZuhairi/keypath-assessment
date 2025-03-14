@@ -4,7 +4,7 @@ import { ref } from 'vue'
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
-    user: ref({}),
+    user: localStorage.getItem('user') || null,
     token: localStorage.getItem('token') || '',
     message: ref(''),
   }),
@@ -53,6 +53,8 @@ export const useAuthStore = defineStore('auth', {
 
     logout() {
       this.$reset()
+      this.user = null
+      this.token = null
       localStorage.removeItem('token')
       localStorage.removeItem('user')
     },

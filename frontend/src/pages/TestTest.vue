@@ -32,7 +32,7 @@
 .test p {
   opacity: 0;
   visibility: hidden;
-  transition: width 0.3s ease-in-out 0.5s;
+  transition: width 0.3s ease-in-o ut 0.5s;
   margin-left: 2px;
   margin-top: 1px;
   white-space: nowrap;

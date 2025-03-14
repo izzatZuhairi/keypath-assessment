@@ -16,24 +16,28 @@
     </div>
     <div class="flex min-w-1/4 mr-1 justify-end">
       <div
-        @click="!authStore.isLoggedIn() ? navigateTo('/login') : authStore.logout()"
+        @click="isLoggedIn ? authStore.logout() : navigateTo('/login')"
         class="max-w-1/2 bg-white flex rounded-xl cursor-pointer"
       >
         <v-icon name="oi-feed-person" fill="black" scale="2" />
-        <p v-if="authStore.isLoggedIn()" class="text-black font-mono h-full mt-2 pr-2">LOGOUT</p>
-        <p v-if="!authStore.isLoggedIn()" class="text-black font-mono h-full mt-2 pr-2">LOGIN</p>
+        <p v-if="isLoggedIn" class="text-black font-mono h-full mt-2 pr-2">LOGOUT</p>
+        <p v-if="!isLoggedIn" class="text-black font-mono h-full mt-2 pr-2">LOGIN</p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../store/authStore.js'
 
 const authStore = useAuthStore()
-
 const router = useRouter()
+
+const isLoggedIn = computed(() => authStore.user !== null)
+
+console.log(isLoggedIn.value)
 
 const navigateTo = (path) => {
   router.push(path)
