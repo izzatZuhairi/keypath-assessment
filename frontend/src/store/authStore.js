@@ -43,14 +43,6 @@ export const useAuthStore = defineStore('auth', {
       })
     },
 
-    async addRecordUser(record) {
-      const user = localStorage.getItem('user')
-      const body = { record, ...(user ? { id: user } : {}) }
-      usePost('/record/add', body).then((res) => {
-        if (res.status === 200) this.message('successfully')
-      })
-    },
-
     logout() {
       this.$reset()
       this.user = null

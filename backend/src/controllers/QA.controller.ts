@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 
-import { TYPE } from "src/types/types.js";
+import { TYPE } from "../types/types.js";
 
-import { failResponse, successResponse } from "src/commons/response.js";
+import { failResponse, successResponse } from "../commons/response.js";
 import * as QASvc from "../services/QA.service.js";
 
 export const fetchQuestions = async (req: Request, res: Response) => {
