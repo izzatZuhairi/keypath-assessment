@@ -43,7 +43,7 @@ export const useAuthStore = defineStore('auth', {
       })
     },
 
-    addRecordUser(record) {
+    async addRecordUser(record) {
       const user = localStorage.getItem('user')
       const body = { record, ...(user ? { id: user } : {}) }
       usePost('/record/add', body).then((res) => {

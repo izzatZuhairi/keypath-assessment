@@ -55,8 +55,6 @@ function getImageUrl() {
 
 const props = computed(() => result?.value?.props)
 
-//  watch(props, (newProps) => quizStore.addRecordUser(newProps, localStorage.getItem('user') ?? null))
-
 const dataChart = computed(() => ({
   labels: ['skill', 'movement', 'playstyle', 'ult', 'heal'],
   datasets: [
@@ -81,7 +79,7 @@ const dataChart = computed(() => ({
 }))
 
 onUnmounted(() => {
-  // quizStore.addRecordUser(props)
+  quizStore.addRecordUser(props.value)
   quizStore.reset()
 })
 </script>

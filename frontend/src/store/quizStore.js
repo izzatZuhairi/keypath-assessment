@@ -1,4 +1,4 @@
-import { useQuestions } from '@/hooks/axios-api'
+import { useQuestions, usePost } from '@/hooks/axios-api'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
@@ -56,6 +56,14 @@ export const useQuizStore = defineStore('quiz', () => {
     }
   }
 
+  async function addRecordUser(record) {
+    const user = localStorage.getItem('user')
+    const body = { record, ...(user ? { id: user } : {}) }
+    usePost('/user/record/add', body).then((res) => {
+      if (res.status === 200) console.log('successfully added record')
+    })
+  }
+
   function reset() {
     answers.value = {}
     currentQ.value = {}
@@ -69,6 +77,7 @@ export const useQuizStore = defineStore('quiz', () => {
     saveAnswer,
     initialQuestion,
     fetchQuestion,
+    addRecordUser,
     answers,
     currentQ,
     level,

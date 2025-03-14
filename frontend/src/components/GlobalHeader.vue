@@ -37,8 +37,6 @@ const router = useRouter()
 
 const isLoggedIn = computed(() => authStore.user !== null)
 
-console.log(isLoggedIn.value)
-
 const navigateTo = (path) => {
   router.push(path)
 }
