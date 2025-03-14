@@ -1,0 +1,125 @@
+{
+  "questions": [
+    {
+      "value": "What is your preferred role?",
+      "level": 0,
+      "type": "ROLE",
+      "answer": {},
+      "condition": {}
+    },
+    {
+      "value": "Do you like guns or prefer throwing them hands?",
+      "type": "WEAPON",
+      "level": 1,
+      "answer": {},
+      "condition": {
+        "ROLE": [1, 2]
+      }
+    },
+    {
+      "value": "Which of these playstyle seems close to your heart?",
+      "type": "PLAYSTYLE",
+      "level": 2,
+      "answer": {},
+      "condition": {
+        "ROLE": [1, 2],
+        "WEAPON": [1, 2]
+      }
+    }
+  ],
+  "answers": [
+    {
+      "nextQ": { "type": "WEAPON", "cond": {} },
+      "type": "ROLE",
+      "answerValue": "killing the enemies, of course! (damage)",
+      "value": 1,
+      "condition": {}
+    },
+    {
+      "nextQ": { "type": "WEAPON", "cond": {} },
+      "type": "ROLE",
+      "answerValue": "I'll protect you with my shield and my body! (tank)",
+      "value": 2,
+      "condition": {}
+    },
+    {
+      "nextQ": { "type": "WEAPON", "cond": {} },
+      "type": "ROLE",
+      "answerValue": "Don't die, we'll save you, keep fighting! (support)",
+      "value": 3,
+      "condition": {}
+    },
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": { "WEAPON": [1], "ROLE": [1, 2] }
+      },
+      "type": "WEAPON",
+      "answerValue": "Catch these hands! Left right goodnight~ (melee)",
+      "value": 1,
+      "condition": {
+        "ROLE": [1, 2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": { "WEAPON": [2], "ROLE": [1, 2] }
+      },
+      "type": "WEAPON",
+      "answerValue": "Yea im not going to soil my hands, where the guns at? (ranged)",
+      "value": 2,
+      "condition": {
+        "ROLE": [1, 2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": { "WEAPON": [3], "ROLE": [1, 2] }
+      },
+      "type": "WEAPON",
+      "answerValue": "Im okay with both",
+      "value": 3,
+      "condition": {
+        "ROLE": [1, 2]
+      }
+    },
+    {
+      "nextQ": null,
+      "type": "PLAYSTYLE",
+      "answerValue": "Go in, poke em, maybe get some kills or distract them, then im out!",
+      "value": 1,
+      "condition": {
+        "ROLE": [1, 2],
+        "WEAPON": [1]
+      }
+    },
+    {
+      "nextQ": null,
+      "type": "PLAYSTYLE",
+      "answerValue": "Imma be right in their face, i dont care!",
+      "value": 2,
+      "condition": {
+        "ROLE": [1, 2],
+        "WEAPON": [1]
+      }
+    }
+  ],
+  "characters": [
+    {
+      "name": "spiderman",
+      "description": "Spider-Man is one of the more instantly recognizable superheroes on offer in Marvel Rivals. His notorious agility wenables him to swing across the battlefield and get into the most advantageous positions quickly and efficiently. His webs can also be used to limit opponents’ movement. ",
+      "props": {
+        "SKILL_LEVEL": 3,
+        "MOVEMENT": 4,
+        "WEAPON": 1,
+        "ROLE": 1,
+        "PLAYSTYLE": 1,
+        "AIMSTYLE": 0,
+        "ULT": 1,
+        "HEAL": 0
+      }
+    }
+  ]
+}

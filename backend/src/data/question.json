@@ -1,0 +1,173 @@
+{
+  "question_initial": [
+    {
+      "value": "What is your preferred role?",
+      "level": 0,
+      "type": "ROLE"
+    }
+  ],
+  "question_dps": [
+    {
+      "value": "Do you like ranged or prefer throwing them hands kinda dps?",
+      "type": "WEAPON",
+      "level": 1,
+      "condition": {
+        "ROLE": [1]
+      }
+    },
+    {
+      "value": "Which of these dps playstyle seems close to your heart?",
+      "type": "PLAYSTYLE",
+      "level": 2,
+      "condition": {
+        "ROLE": [1]
+      }
+    },
+    {
+      "value": "How do you want to move around as a dps melee character?",
+      "type": "MOVEMENT",
+      "level": 3,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [1]
+      }
+    },
+    {
+      "value": "Okay so you prefer ranged hitscan character, then how do you want to aim with them?",
+      "type": "AIMSTYLE",
+      "level": 3,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2],
+        "PLAYSTYLE": [2]
+      }
+    },
+    {
+      "value": "Okay so you prefer ranged projectile character, then how do you want to aim with them?",
+      "type": "AIMSTYLE",
+      "level": 3,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2],
+        "PLAYSTYLE": [3]
+      }
+    },
+    {
+      "value": "What kind of difficulty you prefer for dps role?",
+      "type": "SKILL_LEVEL",
+      "level": 4,
+      "condition": {
+        "ROLE": [1]
+      }
+    },
+    {
+      "value": "What kind of dps ultimate you want?",
+      "type": "ULTIMATE",
+      "level": 5,
+      "condition": {
+        "ROLE": [1]
+      }
+    }
+  ],
+
+  "question_tank": [
+    {
+      "value": "Do you like ranged or a up close tank?",
+      "type": "WEAPON",
+      "level": 1,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "value": "Which of these tank playstyle you'd like?",
+      "type": "PLAYSTYLE",
+      "level": 2,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "value": "How fast you wanna move around?",
+      "type": "MOVEMENT",
+      "level": 3,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "value": "Shield...yay or nay?",
+      "type": "SHIELD",
+      "level": 4,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "value": "What kind of difficulty you prefer for a tank role?",
+      "type": "SKILL_LEVEL",
+      "level": 5,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "value": "What kind of tank ultimate you want?",
+      "type": "ULTIMATE",
+      "level": 6,
+      "condition": {
+        "ROLE": [2]
+      }
+    }
+  ],
+  "question_support": [
+    {
+      "value": "You want a lot of heal or nah?",
+      "type": "HEAL",
+      "level": 1,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "value": "What kind of mobility you want?",
+      "type": "MOVEMENT",
+      "level": 2,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "value": "Do you like being offensive or defensive support?",
+      "type": "PLAYSTYLE",
+      "level": 3,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "value": "You prefer to aim while you heal?",
+      "type": "AIMSTYLE",
+      "level": 4,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "value": "What kind of difficulty you prefer for support role?",
+      "type": "SKILL_LEVEL",
+      "level": 5,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "value": "What kind of support ultimate you want?",
+      "type": "ULTIMATE",
+      "level": 6,
+      "condition": {
+        "ROLE": [3]
+      }
+    }
+  ]
+}

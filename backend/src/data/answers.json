@@ -1,0 +1,768 @@
+{
+  "answer_initial": [
+    {
+      "nextQ": {
+        "type": "WEAPON",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "ROLE",
+      "answerValue": "killing the enemies, of course! (damage)",
+      "value": 1,
+      "condition": null
+    },
+    {
+      "nextQ": {
+        "type": "WEAPON",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "ROLE",
+      "answerValue": "I'll protect you with my shield and my body! (tank)",
+      "value": 2,
+      "condition": null
+    },
+    {
+      "nextQ": {
+        "type": "HEAL",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "ROLE",
+      "answerValue": "Don't die, we'll save you, keep fighting! (support)",
+      "value": 3,
+      "condition": null
+    }
+  ],
+
+  "answer_dps_1": [
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": { "ROLE": 1, "WEAPON": 1 }
+      },
+      "type": "WEAPON",
+      "answerValue": "Catch these hands! Left right goodnight~ (melee)",
+      "value": 1,
+      "condition": { "ROLE": [1] }
+    },
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": { "ROLE": 1, "WEAPON": 2 }
+      },
+      "type": "WEAPON",
+      "answerValue": "Yea im not going to soil my hands, where the guns at? (ranged)",
+      "value": 2,
+      "condition": { "ROLE": [1] }
+    }
+  ],
+
+  "answer_dps_melee_movement": [
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": {
+          "ROLE": [1]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "I dont care how slow i am",
+      "value": 1,
+      "condition": {
+        "ROLE": [1]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": {
+          "ROLE": [1]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "Not too slow, not too fast",
+      "value": 2,
+      "condition": {
+        "ROLE": [1]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": {
+          "ROLE": [1]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "Lightning speed!",
+      "value": 3,
+      "condition": {
+        "ROLE": [1]
+      }
+    }
+  ],
+
+  "answer_dps_2": [
+    {
+      "nextQ": {
+        "type": "MOVEMENT",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "Go in, poke em, maybe get some kills or distract them, then im out!",
+      "value": 1,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [1]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "MOVEMENT",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "Imma be right in their face, i dont care!",
+      "value": 2,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [1]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "AIMSTYLE",
+        "cond": { "ROLE": 1, "WEAPON": 2, "PLAYSTYLE": 3 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "When I shoot it, i want insta hit no bullcrap",
+      "value": 3,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "AIMSTYLE",
+        "cond": { "ROLE": 1, "WEAPON": 2, "PLAYSTYLE": 2 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "I like a lil challenge, I love to predict the enemies",
+      "value": 2,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2]
+      }
+    },
+    {
+      "nextQ": null,
+      "type": "PLAYSTYLE",
+      "answerValue": "Nah, I dont want to aim at all!",
+      "value": 1,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2]
+      }
+    }
+  ],
+
+  "answer_dps_3_hitscan": [
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "AIMSTYLE",
+      "answerValue": "I just want it hit where my crosshair at",
+      "value": 1,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2],
+        "PLAYSTYLE": [2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "AIMSTYLE",
+      "answerValue": "Massive damage up close",
+      "value": 2,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2],
+        "PLAYSTYLE": [2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "AIMSTYLE",
+      "answerValue": "I sure love tracking",
+      "value": 3,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2],
+        "PLAYSTYLE": [2]
+      }
+    }
+  ],
+
+  "answer_dps_3_projectile": [
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "AIMSTYLE",
+      "answerValue": "I just want it hit where I predicted it",
+      "value": 1,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2],
+        "PLAYSTYLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "AIMSTYLE",
+      "answerValue": "Massive damage up close",
+      "value": 2,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2],
+        "PLAYSTYLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "AIMSTYLE",
+      "answerValue": "I like spamming stuff",
+      "value": 3,
+      "condition": {
+        "ROLE": [1],
+        "WEAPON": [2],
+        "PLAYSTYLE": [3]
+      }
+    }
+  ],
+
+  "answer_difficulty_dps": [
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "Pls be easy",
+      "value": 1,
+      "condition": {
+        "ROLE": [1]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "I want to play the game but like a lil challenge",
+      "value": 2,
+      "condition": {
+        "ROLE": [1]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 1 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "No pain no gain!",
+      "value": 3,
+      "condition": {
+        "ROLE": [1]
+      }
+    }
+  ],
+
+  "answer_ultimate_dps": [
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "I want to still do damage during ult",
+      "value": 1,
+      "condition": {
+        "ROLE": [1]
+      }
+    },
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "BIG BOOM!",
+      "value": 2,
+      "condition": {
+        "ROLE": [1]
+      }
+    }
+  ],
+
+  "answer_tank_1": [
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "WEAPON",
+      "answerValue": "Catch these hands! Left right goodnight~ (melee)",
+      "value": 1,
+      "condition": { "ROLE": [2] }
+    },
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "WEAPON",
+      "answerValue": "Yea im not going to soil my hands, where the guns at? (ranged)",
+      "value": 2,
+      "condition": { "ROLE": [2] }
+    },
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "WEAPON",
+      "answerValue": "Im okay with both",
+      "value": 3,
+      "condition": { "ROLE": [2] }
+    }
+  ],
+
+  "answer_tank_2": [
+    {
+      "nextQ": {
+        "type": "MOVEMENT",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "Go in, poke em, maybe get some kills or distract them, then im out!",
+      "value": 1,
+      "condition": { "ROLE": [2] }
+    },
+    {
+      "nextQ": {
+        "type": "MOVEMENT",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "Imma be right in their face, i dont care!",
+      "value": 2,
+      "condition": { "ROLE": [2] }
+    },
+    {
+      "nextQ": {
+        "type": "MOVEMENT",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "I ll be the first line of defense",
+      "value": 3,
+      "condition": { "ROLE": [2] }
+    }
+  ],
+
+  "answer_tank_movement": [
+    {
+      "nextQ": {
+        "type": "SHIELD",
+        "cond": {
+          "ROLE": [2]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "I dont care how slow i am",
+      "value": 1,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SHIELD",
+        "cond": {
+          "ROLE": [2]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "Not too slow, not too fast",
+      "value": 2,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SHIELD",
+        "cond": {
+          "ROLE": [2]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "Lightning speed!",
+      "value": 3,
+      "condition": {
+        "ROLE": [2]
+      }
+    }
+  ],
+
+  "answer_tank_shield": [
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": {
+          "ROLE": [2]
+        }
+      },
+      "type": "SHIELD",
+      "answerValue": "Nah, dont need em",
+      "value": 0,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": {
+          "ROLE": [2]
+        }
+      },
+      "type": "SHIELD",
+      "answerValue": "Yes please!",
+      "value": 1,
+      "condition": {
+        "ROLE": [2]
+      }
+    }
+  ],
+
+  "answer_tank_skill": [
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "Pls be easy",
+      "value": 1,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "I want to play the game but like a lil challenge",
+      "value": 2,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 2 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "No pain no gain!",
+      "value": 3,
+      "condition": {
+        "ROLE": [2]
+      }
+    }
+  ],
+
+  "answer_tank_ultimate": [
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "I want to make a play",
+      "value": 1,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "I want to still do damage during ult",
+      "value": 2,
+      "condition": {
+        "ROLE": [2]
+      }
+    },
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "BIG BOOM!",
+      "value": 3,
+      "condition": {
+        "ROLE": [2]
+      }
+    }
+  ],
+
+  "answer_support_1": [
+    {
+      "nextQ": {
+        "type": "MOVEMENT",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "HEAL",
+      "answerValue": "A lot of heal, thank you!",
+      "value": 1,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "MOVEMENT",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "HEAL",
+      "answerValue": "I don't care about heal, imma be the 5th dps",
+      "value": 2,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "MOVEMENT",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "HEAL",
+      "answerValue": "MORE HEAL, MORE DAMAGE! heck yeah",
+      "value": 3,
+      "condition": {
+        "ROLE": [3]
+      }
+    }
+  ],
+
+  "answer_support_mobility": [
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": {
+          "ROLE": [3]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "As long as it moves",
+      "value": 1,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": {
+          "ROLE": [3]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "Is it weird that i just want vertical movement :P",
+      "value": 2,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "PLAYSTYLE",
+        "cond": {
+          "ROLE": [3]
+        }
+      },
+      "type": "MOVEMENT",
+      "answerValue": "I wish I can take high ground as well",
+      "value": 2,
+      "condition": {
+        "ROLE": [3]
+      }
+    }
+  ],
+
+  "answer_support_playstyle": [
+    {
+      "nextQ": {
+        "type": "AIMSTYLE",
+        "cond": {
+          "ROLE": [3]
+        }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "I want to play offensively as well",
+      "value": 1,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "AIMSTYLE",
+        "cond": {
+          "ROLE": [3]
+        }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "I want to play defensively",
+      "value": 2,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "AIMSTYLE",
+        "cond": {
+          "ROLE": [3]
+        }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "I want to do both",
+      "value": 3,
+      "condition": {
+        "ROLE": [3]
+      }
+    }
+  ],
+
+  "support_aimstyle": [
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "AIMSTYLE",
+      "answerValue": "When I shoot it, i want insta hit no bullcrap",
+      "value": 3,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "I like a lil challenge, I love to predict the enemies",
+      "value": 2,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "SKILL_LEVEL",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "PLAYSTYLE",
+      "answerValue": "Nah, I dont want to aim at all!",
+      "value": 1,
+      "condition": {
+        "ROLE": [3]
+      }
+    }
+  ],
+
+  "support_skill": [
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "Pls be easy",
+      "value": 1,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "I want to play the game but like a lil challenge",
+      "value": 2,
+      "condition": {
+        "ROLE": [3]
+      }
+    },
+    {
+      "nextQ": {
+        "type": "ULTIMATE",
+        "cond": { "ROLE": 3 }
+      },
+      "type": "SKILL_LEVEL",
+      "answerValue": "No pain no gain!",
+      "value": 3,
+      "condition": {
+        "ROLE": [3]
+      }
+    }
+  ],
+
+  "support_ultimate": [
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "My team needs to live as long as Im there",
+      "value": 1
+    },
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "I ll get them back on feet",
+      "value": 2
+    },
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "MORE DAMAGE!",
+      "value": 3
+    },
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "Let me just take em away from my team",
+      "value": 4
+    },
+    {
+      "nextQ": null,
+      "type": "ULTIMATE",
+      "answerValue": "Whatever I wish for",
+      "value": 5
+    }
+  ]
+}
