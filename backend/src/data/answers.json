@@ -673,7 +673,7 @@
         "type": "SKILL_LEVEL",
         "cond": { "ROLE": 3 }
       },
-      "type": "PLAYSTYLE",
+      "type": "AIMSTYLE",
       "answerValue": "I like a lil challenge, I love to predict the enemies",
       "value": 2,
       "condition": {
@@ -685,7 +685,7 @@
         "type": "SKILL_LEVEL",
         "cond": { "ROLE": 3 }
       },
-      "type": "PLAYSTYLE",
+      "type": "AIMSTYLE",
       "answerValue": "Nah, I dont want to aim at all!",
       "value": 1,
       "condition": {
@@ -738,31 +738,46 @@
       "nextQ": null,
       "type": "ULTIMATE",
       "answerValue": "My team needs to live as long as Im there",
-      "value": 1
+      "value": 1,
+      "condition": {
+        "ROLE": [3]
+      }
     },
     {
       "nextQ": null,
       "type": "ULTIMATE",
       "answerValue": "I ll get them back on feet",
-      "value": 2
+      "value": 2,
+      "condition": {
+        "ROLE": [3]
+      }
     },
     {
       "nextQ": null,
       "type": "ULTIMATE",
       "answerValue": "MORE DAMAGE!",
-      "value": 3
+      "value": 3,
+      "condition": {
+        "ROLE": [3]
+      }
     },
     {
       "nextQ": null,
       "type": "ULTIMATE",
       "answerValue": "Let me just take em away from my team",
-      "value": 4
+      "value": 4,
+      "condition": {
+        "ROLE": [3]
+      }
     },
     {
       "nextQ": null,
       "type": "ULTIMATE",
       "answerValue": "Whatever I wish for",
-      "value": 5
+      "value": 5,
+      "condition": {
+        "ROLE": [3]
+      }
     }
   ]
 }

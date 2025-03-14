@@ -19,8 +19,6 @@
       <router-link to="/login">Already have an account? Login here</router-link>
     </div>
   </div>
-
-  <div>input: {{ t }}</div>
 </template>
 
 <script setup>

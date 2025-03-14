@@ -97,3 +97,49 @@ export const login = async (req: Request, res: Response) => {
 
   res.send(response);
 };
+
+export const addRecord = async (req: Request, res: Response) => {
+  let response = null;
+
+  try {
+    const body = req.body;
+
+    const data = await userSvc.addResult(body.record, body.id ?? null);
+    response = successResponse({
+      data,
+      message: "success",
+    });
+  } catch (e) {
+    console.error(e);
+
+    response = failResponse({
+      data: null,
+      code: 500,
+      message: "Internal server error",
+    });
+  }
+
+  res.send(response);
+};
+
+export const getStats = async (_req: Request, res: Response) => {
+  let response = null;
+
+  try {
+    const data = await userSvc.getTotalCount();
+    response = successResponse({
+      data,
+      message: "success",
+    });
+  } catch (e) {
+    console.error(e);
+
+    response = failResponse({
+      data: null,
+      code: 500,
+      message: "Internal server error",
+    });
+  }
+
+  res.send(response);
+};

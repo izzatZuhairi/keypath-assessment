@@ -31,20 +31,34 @@ export const useAuthStore = defineStore('auth', {
     async login(username, password, router) {
       const body = { username, password }
       usePost('/login', body).then((res) => {
-        if (res.data.statusCode === 200) {
-          this.user = res.data.user
-          this.token = res.data.access_token
+        if (res.status === 200 && !!res?.data?.data) {
+          this.user = res.data.data.user
+          this.token = res.data.data.access_token
 
-          localStorage.setItem('token', res.data.access_token)
+          localStorage.setItem('user', res.data.data.user)
+          localStorage.setItem('token', res.data.data.access_token)
 
           router.push('/home')
         }
       })
     },
 
+    addRecordUser(record) {
+      const user = localStorage.getItem('user')
+      const body = { record, ...(user ? { id: user } : {}) }
+      usePost('/record/add', body).then((res) => {
+        if (res.status === 200) this.message('successfully')
+      })
+    },
+
     logout() {
       this.$reset()
       localStorage.removeItem('token')
+      localStorage.removeItem('user')
+    },
+
+    isLoggedIn() {
+      return !!localStorage.getItem('token')
     },
   },
 })

@@ -9,15 +9,19 @@
         <v-icon name="bi-pie-chart-fill" fill="black" scale="1.5" />
         <p>STATISTIC</p>
       </div>
-      <div class="header p-1" @click="navigateTo('/result')">
-        <v-icon name="bi-person-lines-fill" fill="black" scale="1.5" />
-        <p>MY STATS</p>
-      </div>
+      <!-- <div class="header p-1" @click="navigateTo('/result')"> -->
+      <!--   <v-icon name="bi-person-lines-fill" fill="black" scale="1.5" /> -->
+      <!--   <p>MY STATS</p> -->
+      <!-- </div> -->
     </div>
     <div class="flex min-w-1/4 mr-1 justify-end">
-      <div @click="navigateTo('/login')" class="max-w-1/2 bg-white flex rounded-xl cursor-pointer">
+      <div
+        @click="!authStore.isLoggedIn() ? navigateTo('/login') : authStore.logout()"
+        class="max-w-1/2 bg-white flex rounded-xl cursor-pointer"
+      >
         <v-icon name="oi-feed-person" fill="black" scale="2" />
-        <p class="text-black font-mono h-full mt-2 pr-2">ANONYMOUS</p>
+        <p v-if="authStore.isLoggedIn()" class="text-black font-mono h-full mt-2 pr-2">LOGOUT</p>
+        <p v-if="!authStore.isLoggedIn()" class="text-black font-mono h-full mt-2 pr-2">LOGIN</p>
       </div>
     </div>
   </div>
@@ -25,6 +29,9 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { useAuthStore } from '../store/authStore.js'
+
+const authStore = useAuthStore()
 
 const router = useRouter()
 

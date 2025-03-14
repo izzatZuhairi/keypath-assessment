@@ -42,3 +42,7 @@ export const createAnonymousRecord = async (record: Map<TYPE, number>) => {
     record,
   });
 };
+
+export const countByRole = async (role: number) => {
+  return User.countDocuments({ "record.ROLE": role });
+};
