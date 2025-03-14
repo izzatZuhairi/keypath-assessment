@@ -9,7 +9,7 @@ router.get("/health/check", (_req, res) => {
   res.send("Everything works fine!");
 });
 
-router.get("/init-partial-data", async (_req, res) => {
+router.get("/init-data", async (_req, res) => {
   const data = await insertPartialData();
   res.send(data);
 });

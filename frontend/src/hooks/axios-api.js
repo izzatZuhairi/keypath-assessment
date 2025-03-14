@@ -19,3 +19,9 @@ export async function usePost(url, body) {
 
   return res
 }
+
+export async function useFetch(url) {
+  const res = await API.get(url, {})
+
+  return res
+}
