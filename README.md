@@ -2,15 +2,38 @@
 
 ### To run the project
 
-## requirement docker
+### requirement
 
-# `docker compose up -d --build`
+`docker`
+
+```
+I'm pretty sure docker-cli is installed as well when installing the core docker so yea
+```
+
+`docker compose up -d --build`
 
 ## Running the project in dev environment
 
-## backend: `npm run dev-r`
+### backend
 
-## frontend: `npm run dev`
+Need at least `=> node 18`
 
-## DB: any [mongodb]
+`npm i`
+`npm run dev-r`
 
+### frontend
+
+`npm i`
+`npm run dev`
+
+### DB: [mongodb]
+
+## To make it easier to create data after build you can
+
+```
+navigate to "/set-data" on frontend webpage and you'll see two buttons (initData & resetData)
+- They do exactly that
+- "Init data" will insert all the necessary data into "Question" "Answers" & "Characters"
+- "reset data" will delete all the data in "Question" "Answers" & "Characters"
+- I did not put any constraint in that page so pls dont spam [might need to do only admin]
+```
