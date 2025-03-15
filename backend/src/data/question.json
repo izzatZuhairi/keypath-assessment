@@ -39,7 +39,7 @@
       "condition": {
         "ROLE": [1],
         "WEAPON": [2],
-        "PLAYSTYLE": [2]
+        "PLAYSTYLE": [3]
       }
     },
     {
@@ -49,7 +49,7 @@
       "condition": {
         "ROLE": [1],
         "WEAPON": [2],
-        "PLAYSTYLE": [3]
+        "PLAYSTYLE": [2]
       }
     },
     {

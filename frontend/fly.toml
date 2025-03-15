@@ -9,7 +9,7 @@ primary_region = 'sin'
 [build]
 
 [env]
-  VITE_BACKEND_URL= "https://my-backend-bold-butterfly-6572.fly.dev/"
+  VITE_BACKEND_URL= "https://my-backend-bold-butterfly-6572.fly.dev"
 
 [http_service]
   internal_port = 80

@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
-  { path: '/', redirect: '/home' },
+  { path: '/', component: () => import('../pages/HomePage.vue') },
   { path: '/home', component: () => import('../pages/HomePage.vue') },
   { path: '/questions/:type', component: () => import('../pages/ListQuestions.vue') },
   { path: '/register', component: () => import('../pages/RegisterPage.vue') },
@@ -13,7 +13,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 })
 
