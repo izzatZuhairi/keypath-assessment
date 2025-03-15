@@ -1,4 +1,4 @@
-import { TYPE } from "src/types/types.js";
+import { TYPE } from "../types/types.js";
 import { User, UserDocument } from "../models/user.model.js";
 import { Types } from "mongoose";
 

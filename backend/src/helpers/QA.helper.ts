@@ -1,4 +1,4 @@
-import { TYPE } from "src/types/types.js";
+import { TYPE } from "../types/types.js";
 import { Answer, AnswerDocument } from "../models/answer.model.js";
 import { Question, QuestionDocument } from "../models/question.model.js";
 

@@ -1,4 +1,4 @@
-import { TYPE } from "src/types/types.js";
+import { TYPE } from "../types/types.js";
 
 import * as QAHelper from "../helpers/QA.helper.js";
 
