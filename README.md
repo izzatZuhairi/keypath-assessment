@@ -72,3 +72,4 @@ disclaimer:
 
 5. As mentioned above, this current code work best for full screen that is more than > 1200px (preferably desktop size), i did not have time to cater for different screen size
 6. I'm not good in UI/UX so they probably bad, pls excuse them haha
+7. AND, I know I should push the secret like that (in docker compose yml file) but yea I just want to make it simple :p
