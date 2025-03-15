@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { insertPartialData, reset } from "../data/seeder-function.js";
+import { insertPartialData, reset } from "../seeder/seeder-function.js";
 import { login } from "../controllers/user.controller.js";
 
 const router = Router();

@@ -19,7 +19,8 @@ const main = async () => {
   app.use(express.urlencoded({ extended: true }));
   app.use(
     cors({
-      origin: process.env.FE_URI,
+      origin: "*",
+      methods: "GET, POST, PUT, DELETE, OPTIONS",
       credentials: false,
     }),
   );

@@ -9,9 +9,18 @@ import { Char } from "../models/character.model.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const questionPath = path.resolve(__dirname, "question.json");
-const answerPath = path.resolve(__dirname, "answers.json");
-const characterPath = path.resolve(__dirname, "character-data.json");
+const questionPath = path.resolve(
+  __dirname.replace("/src", ""),
+  "../data/question.json",
+);
+const answerPath = path.resolve(
+  __dirname.replace("/src", ""),
+  "../data/answers.json",
+);
+const characterPath = path.resolve(
+  __dirname.replace("/src", ""),
+  "../data/character.json",
+);
 
 export const insertPartialData = async () => {
   const q = (await readParse(questionPath)) as any;
