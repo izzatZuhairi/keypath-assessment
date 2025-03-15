@@ -1,5 +1,7 @@
 # keypath-assessment
 
+## Pls navigate to: `http://165.22.52.65:8080` for viewing. I will take this down in 2 weeks time. Thank you ~
+
 ### To run the project
 
 ### requirement
@@ -11,7 +13,7 @@ then if you want to manually trigger the docker compose:
 
 `docker compose up -d --build`
 
-Or: run the start.sh script provided in the root file: (dont worry they are just docker compose command)
+Or (recommended): run the start.sh script provided in the root file: (dont worry they are just docker compose command)
 
 `bash ./start.sh`
 
@@ -23,6 +25,8 @@ or just
 
 ### backend
 
+fill up `.env` file based on `.env.sample`. Pls provide 2048bits for the secrets as I used RSA256 for the JWT token generation. Other than that it should be explanatory by it's name.
+
 Need at least `=> node 18`
 
 `npm i`
@@ -30,10 +34,14 @@ Need at least `=> node 18`
 
 ### frontend
 
+provide an `.env` file based on the `.env.sample`. The content should only be `VITE_BACKEND_URL` which pointing to the backend
+
 `npm i`
 `npm run dev`
 
 ### DB: [mongodb]
+
+create one with default port (27017) and use the url for backend env
 
 ## To make it easier to create data after build you can
 
@@ -45,14 +53,12 @@ navigate to "/set-data" on frontend webpage and you'll see two buttons (initData
 - I did not put any constraint in that page so pls dont spam [might need to do only admin]
 ```
 
-### Or you can trigger it through backend all
+### Or you can trigger it through backend call
 
 ```
 - call '<backend-uri>/reset-data'
 - call '<backend-uri>/init-data'
 ```
-
-Pls navigate to: `http://165.22.52.65:8080` for viewing. I will take this down in 2 weeks time. Thank you ~
 
 disclaimer:
 
