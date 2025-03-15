@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+console.log('BACKEND URL:', import.meta.env.VITE_BACKEND_URL)
+
 const API = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
   withCredentials: false,
@@ -9,6 +11,7 @@ const API = axios.create({
 })
 
 export async function useQuestions(url) {
+  console.log(url, '?????')
   const res = await API.get(url, {})
 
   return res.data

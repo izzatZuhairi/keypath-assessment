@@ -7,6 +7,8 @@ app = 'my-frontend'
 primary_region = 'sin'
 
 [build]
+  [build.args]
+    URL="https://my-backend-bold-butterfly-6572.fly.dev"
 
 [env]
   VITE_BACKEND_URL= "https://my-backend-bold-butterfly-6572.fly.dev"
