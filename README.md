@@ -1,6 +1,6 @@
 # keypath-assessment
 
-## Pls navigate to: `http://165.22.52.65:8080` for viewing. I will take this down in 2 weeks time. Thank you ~
+## Pls navigate to: `http://128.199.161.154:8080` for viewing. I will take this down in 2 weeks time. Thank you ~
 
 ### To run the project
 
