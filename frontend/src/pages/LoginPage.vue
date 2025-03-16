@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 import InputTemplate from '../components/InputTemplate.vue'
@@ -32,4 +32,6 @@ const username = ref('')
 const password = ref('')
 
 const authStore = useAuthStore()
+
+onUnmounted(() => authStore.fetchUserRecord())
 </script>

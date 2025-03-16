@@ -9,14 +9,14 @@
         <v-icon name="bi-pie-chart-fill" fill="black" scale="1.5" />
         <p>STATISTIC</p>
       </div>
-      <!-- <div class="header p-1" @click="navigateTo('/result')"> -->
-      <!--   <v-icon name="bi-person-lines-fill" fill="black" scale="1.5" /> -->
-      <!--   <p>MY STATS</p> -->
-      <!-- </div> -->
+      <div v-if="isLoggedIn" class="header p-1" @click="navigateToResultPage">
+        <v-icon name="bi-person-lines-fill" fill="black" scale="1.5" />
+        <p>MY STATS</p>
+      </div>
     </div>
     <div class="flex min-w-1/4 mr-1 justify-end">
       <div
-        @click="isLoggedIn ? authStore.logout() : navigateTo('/login')"
+        @click="isLoggedIn ? authStore.logout(router) : navigateTo('/login')"
         class="max-w-1/2 bg-white flex rounded-xl cursor-pointer"
       >
         <v-icon name="oi-feed-person" fill="black" scale="2" />
@@ -29,16 +29,22 @@
 
 <script setup>
 import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../store/authStore.js'
 
 const authStore = useAuthStore()
+const { user } = storeToRefs(authStore)
 const router = useRouter()
 
 const isLoggedIn = computed(() => authStore.user !== null)
 
 const navigateTo = (path) => {
   router.push(path)
+}
+
+const navigateToResultPage = () => {
+  router.push(`/personal-result/${user.value}`)
 }
 </script>
 
