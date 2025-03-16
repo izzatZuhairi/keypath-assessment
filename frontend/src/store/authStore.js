@@ -58,11 +58,13 @@ export const useAuthStore = defineStore('auth', {
 
     async fetchUserRecord() {
       const user = localStorage.getItem('user')
-      useFetch(`/user/fetch/${user}`).then((res) => {
-        if (res.status === 200) {
-          this.record = res?.data?.data
-        }
-      })
+      if (user) {
+        useFetch(`/user/fetch/${user}`).then((res) => {
+          if (res.status === 200) {
+            this.record = res?.data?.data
+          }
+        })
+      }
     },
 
     logout(router) {

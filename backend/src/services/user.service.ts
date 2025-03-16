@@ -37,6 +37,12 @@ export const comparePassword = async (hashed: string, input: string) => {
 };
 
 export const signUser = async (user: Partial<UserDocument>) => {
+  console.log(
+    process.env.REFRESH_TOKEN_EXPIRE,
+    process.env.ACCESS_TOKEN_EXPIRE,
+    "?????",
+  );
+
   const access_token = signJwt(
     { sub: user._id },
     { expiresIn: process.env.ACCESS_TOKEN_EXPIRE as unknown as number },
