@@ -1,4 +1,4 @@
-import { usePost } from '@/hooks/axios-api'
+import { useFetch, usePost } from '@/hooks/axios-api'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
@@ -6,7 +6,9 @@ export const useAuthStore = defineStore('auth', {
   state: () => ({
     user: localStorage.getItem('user') || null,
     token: localStorage.getItem('token') || '',
+    record: {},
     message: ref(''),
+    error: '',
   }),
   getters: {},
   actions: {
@@ -31,14 +33,17 @@ export const useAuthStore = defineStore('auth', {
     async login(username, password, router) {
       const body = { username, password }
       usePost('/login', body).then((res) => {
-        if (res.status === 200 && !!res?.data?.data) {
+        if (!!res?.data?.data && res?.data?.statusCode === 200) {
+          this.error = ''
           this.user = res.data.data.user
-          this.token = res.data.data.access_token
 
+          this.token = res.data.data.access_token
           localStorage.setItem('user', res.data.data.user)
           localStorage.setItem('token', res.data.data.access_token)
 
           router.push('/home')
+        } else {
+          this.error = 'Invalid credentials'
         }
       })
     },
@@ -51,16 +56,35 @@ export const useAuthStore = defineStore('auth', {
       })
     },
 
-    logout() {
+    async fetchUserRecord() {
+      const user = localStorage.getItem('user')
+      if (user) {
+        useFetch(`/user/fetch/${user}`).then((res) => {
+          if (res.status === 200) {
+            this.record = res?.data?.data
+          }
+        })
+      }
+    },
+
+    logout(router) {
       this.$reset()
       this.user = null
       this.token = null
+      this.record = {}
       localStorage.removeItem('token')
       localStorage.removeItem('user')
+
+      router.push('/home')
+    },
+
+    resetError() {
+      this.error = ''
     },
 
     isLoggedIn() {
       return !!localStorage.getItem('token')
     },
   },
+  persist: true,
 })

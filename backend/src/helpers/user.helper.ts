@@ -19,7 +19,7 @@ export const getUser = async (id?: string) => {
 
   if (id) cond = { _id: id };
 
-  return User.find(cond).lean();
+  return User.findOne(cond).select("-password").lean();
 };
 
 export const updateUserRecord = async (
