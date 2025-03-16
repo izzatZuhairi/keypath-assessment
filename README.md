@@ -72,7 +72,7 @@ disclaimer:
    - set refresh/access token into cookie from api
    - add protected api (through authentication)
    - properly set up the cors to only allow FE calls from the deployed uri
-   - able to revisit result page and fetch current logged in user record
+   - able to revisit result page and fetch current logged in user record properly
    - properly set up nginx & use domain & tls/https
    - cater for different screen resolution
 
