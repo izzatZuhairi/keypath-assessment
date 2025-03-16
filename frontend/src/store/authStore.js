@@ -8,6 +8,7 @@ export const useAuthStore = defineStore('auth', {
     token: localStorage.getItem('token') || '',
     record: {},
     message: ref(''),
+    error: '',
   }),
   getters: {},
   actions: {
@@ -32,7 +33,8 @@ export const useAuthStore = defineStore('auth', {
     async login(username, password, router) {
       const body = { username, password }
       usePost('/login', body).then((res) => {
-        if (res.status === 200 && !!res?.data?.data) {
+        if (!!res?.data?.data && res?.data?.statusCode === 200) {
+          this.error = ''
           this.user = res.data.data.user
 
           this.token = res.data.data.access_token
@@ -40,6 +42,8 @@ export const useAuthStore = defineStore('auth', {
           localStorage.setItem('token', res.data.data.access_token)
 
           router.push('/home')
+        } else {
+          this.error = 'Invalid credentials'
         }
       })
     },
@@ -70,6 +74,10 @@ export const useAuthStore = defineStore('auth', {
       localStorage.removeItem('user')
 
       router.push('/home')
+    },
+
+    resetError() {
+      this.error = ''
     },
 
     isLoggedIn() {

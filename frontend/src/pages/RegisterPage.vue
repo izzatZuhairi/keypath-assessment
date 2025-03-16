@@ -5,7 +5,7 @@
       <InputTemplate label="Name" v-model="name" />
       <InputTemplate label="Age" v-model="age" />
       <InputTemplate label="Username" v-model="username" />
-      <InputTemplate label="Password" v-model="password" />
+      <InputTemplate label="Password" v-model="password" type="password" />
     </div>
     <div class="w-full flex justify-end">
       <button

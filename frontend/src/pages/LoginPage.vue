@@ -3,7 +3,7 @@
     <div class="font-bold font-mono text-3xl text-center">LOGIN</div>
     <div>
       <InputTemplate label="Username" v-model="username" />
-      <InputTemplate label="Password" v-model="password" />
+      <InputTemplate label="Password" v-model="password" type="password" />
     </div>
     <div class="w-full flex justify-end">
       <button
@@ -16,11 +16,17 @@
     <div class="w-full text-center mt-5">
       <router-link to="/register">Still no account? Register now</router-link>
     </div>
+    <div v-if="isError" class="w-full text-center mt-1">
+      <router-link to="/register">
+        <p class="text-red-600">Invalid credentials, try again</p>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onUnmounted } from 'vue'
+import { ref, onUnmounted, computed } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
 
 import InputTemplate from '../components/InputTemplate.vue'
@@ -32,6 +38,12 @@ const username = ref('')
 const password = ref('')
 
 const authStore = useAuthStore()
+const { error } = storeToRefs(authStore)
 
-onUnmounted(() => authStore.fetchUserRecord())
+const isError = computed(() => error?.value)
+
+onUnmounted(() => {
+  authStore.resetError()
+  authStore.fetchUserRecord()
+})
 </script>
